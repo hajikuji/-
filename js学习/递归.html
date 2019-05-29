@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>对不起写个递归</title>
+</head>
+
+<body>
+<input type="text" id="input" placeholder="输入数值"> <button id="btn">计算</button>
+<script>
+	function fbnc(n) {
+		return n <= 2?1:(fbnc(n-1)+fbnc(n-2))
+	}
+	var input = document.getElementById("input")
+	console.log('input的value默认值：' + input.value +'--是否为<=2' + (input.value<=2) + typeof input.value)
+	document.getElementById("btn").onclick = function() {
+		var value = input.value
+		var result = fbnc(value)
+		console.log(result)
+	}
+</script>
+</body>
+</html>

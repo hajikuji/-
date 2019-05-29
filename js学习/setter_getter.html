@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>神啊！！！！！请让我一次写对吧</title>
+</head>
+
+<body>
+<script>
+	var obj = {
+		name: "神秘对象",
+		age: "别问，问就是神秘",
+		get Info() {
+			return this.name + " " + this.age
+		},
+		set Info(data) {
+			var gg = data.split(" ")
+			this.age = gg[1]
+			this.name = gg[0]
+		}
+	}
+	obj.Info = "另一个神秘对象 真的太神秘了"
+	console.log(obj)
+</script>
+</body>
+</html>

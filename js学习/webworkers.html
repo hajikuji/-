@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>原谅我又做了个递归</title>
+</head>
+
+<body>
+<input type="text" id="input" placeholder="数值"><button id="btn">计算</button>
+<script>
+	var input = document.getElementById("input")
+	
+	document.getElementById("btn").onclick = function() {
+		var value = input.value
+		//创建一个worker对象
+		var worker = new Worker('worker.js')
+		//从子线程接收数据
+		worker.onmessage = function(event) {
+			console.log("接收数据"+ event.data)
+		}
+		//发送数据到子线程
+		worker.postMessage(value)
+		console.log("发送数据到子线程" + value)
+		}
+</script>
+</body>
+</html>
